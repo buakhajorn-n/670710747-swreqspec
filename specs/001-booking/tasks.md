@@ -14,7 +14,7 @@ Spec ID: SPEC-BKG-001
 - ไฟล์ที่แตะ: backend/app/config.py, backend/app/db/models.py, backend/app/db/session.py, backend/app/db/migrations/001_init.py
 - ต้องทำหลัง: ไม่มี
 - เสร็จเมื่อ: migration สร้างตาราง slots, bookings และ audit_logs พร้อมใช้งานกับ PostgreSQL และโครงฐานข้อมูลรองรับข้อจำกัดด้านความปลอดภัยและข้อมูลผู้รับบริการ
-- สถานะ: พร้อมทำ
+- สถานะ: เสร็จ รอทีมตรวจ
 
 ### T-02 สร้าง API ค้นหาช่วงว่างและประเมินประสิทธิภาพ
 - รองรับ: FR-BKG-01, FR-BKG-06, NFR-PERF-01

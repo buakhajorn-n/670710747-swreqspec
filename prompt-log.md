@@ -93,3 +93,20 @@
 - ปรับ T-06 ให้เป็น "กำหนดรูปแบบหมายเลขคิวและแสดงผลบนหน้าจอ" และตั้งสถานะเป็น "รอ Q-02"
 - อัปเดตตารางตรวจความครบ AC และ Constraint ให้ครอบคลุมทุกข้อที่เกี่ยวข้อง
 - รักษากฎให้ไม่เดาคำตอบ Q-02 และไม่เพิ่มความต้องการที่ไม่มีใน spec
+
+---
+
+## 2569-09-23 คำสั่ง: /implement T-01
+
+- เครื่องมือ: Copilot ใน Codespaces
+- ไฟล์ที่แก้: backend/app/config.py, backend/app/db/models.py, backend/app/db/session.py, backend/app/db/migrations/001_init.py, backend/tests/test_T01_db_init.py
+- ผลลัพธ์: สร้างโครงฐานข้อมูลแบบพื้นฐานสำหรับระบบจองคิว ตาม CON-TECH-01, DOM-PDPA-01 และ IF-HIS-01
+
+### ผลการทดสอบ
+
+- รัน: cd backend && pytest tests/test_T01_db_init.py -q
+- ผล: ผ่านหลังแก้ปัญหา import แบบ file path ได้รับความถูกต้อง
+
+### สิ่งที่เกือบต้องเดาแต่ถามแทน
+
+- ไม่มีสิ่งที่ต้องเดาเพิ่มเติม เนื่องจากข้อกำหนดใน spec และ plan ชัดเจนว่า schema ต้องมี slots, bookings และ audit_logs และ bookings ต้องเก็บ hn เท่านั้นโดยไม่เก็บ national_id
