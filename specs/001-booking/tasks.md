@@ -14,15 +14,15 @@ Spec ID: SPEC-BKG-001
 - ไฟล์ที่แตะ: backend/app/config.py, backend/app/db/models.py, backend/app/db/session.py, backend/app/db/migrations/001_init.py
 - ต้องทำหลัง: ไม่มี
 - เสร็จเมื่อ: migration สร้างตาราง slots, bookings และ audit_logs พร้อมใช้งานกับ PostgreSQL และโครงฐานข้อมูลรองรับข้อจำกัดด้านความปลอดภัยและข้อมูลผู้รับบริการ
-- สถานะ: เสร็จ รอทีมตรวจ
+- สถานะ: เสร็จ
 
 ### T-02 สร้าง API ค้นหาช่วงว่างและประเมินประสิทธิภาพ
 - รองรับ: FR-BKG-01, FR-BKG-06, NFR-PERF-01
 - ตรวจด้วย: AC-BKG-05
 - ไฟล์ที่แตะ: backend/app/slots/router.py, backend/app/slots/service.py, backend/tests/test_slots.py
-- ต้องทำหลัง: T-01
+- ต้องทำหลัง: ไม่มี
 - เสร็จเมื่อ: GET /slots คืนช่วงเวลาว่างภายใน 30 วันพร้อมที่นั่งคงเหลือ และ p95 ของการตอบสนองในสภาวะ 200 ผู้ใช้พร้อมกันอยู่ภายใน 2 วินาที
-- สถานะ: พร้อมทำ
+- สถานะ: เสร็จ
 
 ### T-03 สร้าง API การจองแบบพื้นฐาน
 - รองรับ: FR-BKG-04, IF-HIS-01
