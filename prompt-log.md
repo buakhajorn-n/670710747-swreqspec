@@ -96,6 +96,42 @@
 
 ---
 
+## 2569-09-23 คำสั่ง: /tasks (สร้างใหม่หลังไฟล์ถูกล้าง)
+
+- เครื่องมือ: Copilot ใน Codespaces
+- ไฟล์: specs/001-booking/spec.md, specs/001-booking/plan.md, specs/001-booking/tasks.md
+- ผลลัพธ์: สร้าง tasks.md ใหม่จาก spec.md และ plan.md เนื่องจาก tasks.md ฉบับก่อนหน้าว่างเปล่า
+
+### สรุปผลลัพธ์
+
+- สร้าง task ทั้งหมด 14 task เรียงจากฐานข้อมูล, API, หน้าจอ, การเชื่อมต่อจริง, security และ usability
+- มี 1 task ที่รอ Open Question คือ T-14 ซึ่งรอ Q-02 เรื่องวิธีออกและรูปแบบหมายเลขคิว
+- ครอบคลุม AC-BKG-01 ถึง AC-BKG-06 ครบทุกตัวในตารางตรวจความครบ AC
+- ครอบคลุม CON-TECH-01, DOM-PDPA-01, IF-IDP-01, IF-HIS-01 และ IF-NOT-01 ครบทุกตัวในตารางตรวจความครบ Constraint
+- เพิ่ม task สำหรับ NFR-SEC-01 และ NFR-USE-01 โดยไม่สร้างข้อกำหนดใหม่ และไม่เดาคำตอบ Q-02
+
+---
+
+## 2569-09-23 คำสั่ง: /implement T-09
+
+- เครื่องมือ: Copilot ใน Codespaces
+- ไฟล์ที่สร้างหรือแก้: frontend/src/pages/SlotPicker.jsx, frontend/src/App.jsx, frontend/src/api/client.js
+- ผลลัพธ์: สร้างหน้าเลือกแพ็กเกจและช่วงเวลาตรวจด้วย API จำลองตามสัญญา GET /slots รองรับ FR-BKG-01 และ FR-BKG-06
+
+### ผลการทดสอบ
+
+- รัน: cd frontend && npm test -- --run
+- ผล: ผ่าน 1 test
+- รัน: cd frontend && npm run build
+- ผล: build สำเร็จด้วย Vite
+- หมายเหตุ: มี React act(...) warning จาก smoke test เดิม แต่ test ผ่านและไม่ทำให้ build ล้มเหลว
+
+### สิ่งที่เกือบต้องเดาแต่ถามแทน
+
+- ไม่มีสิ่งที่ต้องเดาเพิ่มเติม ใช้สัญญา GET /slots และข้อมูล package/date/remaining ตาม plan.md โดยไม่กำหนดกติกาใหม่ให้ระบบ
+
+---
+
 ## 2569-09-23 คำสั่ง: /implement T-01
 
 - เครื่องมือ: Copilot ใน Codespaces
