@@ -74,3 +74,22 @@
 - การเปลี่ยนแปลง: เปลี่ยนเงื่อนไขตรวจที่นั่งจาก `remaining < 0` เป็น `remaining <= 0`
 - ไม่ได้แก้ test
 - ผล `cd backend && pytest -v`: 7 passed, 1 warning
+
+---
+
+## 2569-10-07 08.31 คำสั่ง: /verify specs/001-booking/
+
+- ผล test: backend 7 ผ่าน 0 ไม่ผ่าน; frontend 1 ผ่าน 0 ไม่ผ่าน
+- สร้าง [specs/001-booking/rtm.md](specs/001-booking/rtm.md)
+- ตารางตามรอยไปข้างหน้า: ครบ 0, ยังไม่ถึง 7, รอ 0, ช่องโหว่ 8
+- ข้อค้นพบใหม่: F-01 ถึง F-12
+- รายการแก้แล้ว: F-13 (แก้เงื่อนไขปฏิเสธเมื่อไม่มีที่นั่ง และมี test ผ่าน)
+
+---
+
+## 2569-10-07 08.37 คำสั่ง: แก้โค้ด: ของแถม อยู่ใน Out of scope (UC-02) ลบ endpoint และ cancel_booking ออก
+
+- ไฟล์ที่แก้: backend/app/booking/router.py, backend/app/booking/service.py
+- การเปลี่ยนแปลง: ลบ endpoint `DELETE /bookings/{booking_id}` และฟังก์ชัน `cancel_booking` ซึ่งรองรับการยกเลิกคิวใน UC-02 ที่เป็น Out of scope
+- อัปเดต [specs/001-booking/rtm.md](specs/001-booking/rtm.md): ย้าย F-01 และ F-11 ไปหัวข้อ "แก้แล้ว"
+- ผล test: `cd backend && pytest -v` ผ่าน 7 tests, ไม่ผ่าน 0 tests, มี warning 1 รายการ
